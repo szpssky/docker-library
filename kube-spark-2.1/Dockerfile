@@ -5,7 +5,7 @@ ENV spark_ver 2.2.1
 
 RUN mkdir -p /opt && \
     cd /opt && \
-    curl -o http://www.eu.apache.org/dist/hadoop/common/hadoop-${hadoop_ver}/hadoop-${hadoop_ver}.tar.gz | \
+    curl http://www.eu.apache.org/dist/hadoop/common/hadoop-${hadoop_ver}/hadoop-${hadoop_ver}.tar.gz | \
         tar -zx hadoop-${hadoop_ver}/lib/native && \
     ln -s hadoop-${hadoop_ver} hadoop && \
     echo Hadoop ${hadoop_ver} native libraries installed in /opt/hadoop/lib/native
