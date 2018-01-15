@@ -1,11 +1,11 @@
 FROM java:openjdk-8-jdk
 
-ENV hadoop_ver 2.7.0
-ENV spark_ver 2.1.0
+ENV hadoop_ver 2.7.5
+ENV spark_ver 2.2.1
 
 RUN mkdir -p /opt && \
     cd /opt && \
-    curl http://www.eu.apache.org/dist/hadoop/common/hadoop-${hadoop_ver}/hadoop-${hadoop_ver}.tar.gz | \
+    curl -o http://www.eu.apache.org/dist/hadoop/common/hadoop-${hadoop_ver}/hadoop-${hadoop_ver}.tar.gz | \
         tar -zx hadoop-${hadoop_ver}/lib/native && \
     ln -s hadoop-${hadoop_ver} hadoop && \
     echo Hadoop ${hadoop_ver} native libraries installed in /opt/hadoop/lib/native
